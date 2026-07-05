@@ -98,8 +98,8 @@
 #'
 #' @examples
 #' # Load example data
-#' data(streamflow)
-#' x <- streamflow$r1
+#' data(haenam)
+#' x <- haenam$X1
 #'
 #' # Basic usage with likelihood weights
 #' result <- ma.gev(x, quant = c(0.95, 0.99), weight = 'like1', B = 100)
@@ -428,6 +428,7 @@ ma.gev <- function(data = NULL, quant = c(0.98, 0.99, 0.995),
     message("All return levels are NA, returning LME quantiles")
     zx$qua.ma <- zx$qua.lme
     zx$qua.bma <- zx$qua.lme
+    class(zx) <- "magev"
     return(zx)
   }
 
@@ -519,5 +520,6 @@ ma.gev <- function(data = NULL, quant = c(0.98, 0.99, 0.995),
   zx$run_kpar <- run
   zx$original.numk <- org.numk
 
+  class(zx) <- "magev"
   return(zx)
 }

@@ -7,7 +7,28 @@ export(pargev.kfix)
 export(MS_pk)
 export(new_pf_norm)
 export(pk.norm.stnary)
+export(pk.beta)
 export(pk.beta.stnary)
+
+# Non-stationary GEV11 methods (new in v2.0.0)
+export(lme.gev11)
+export(strup.gev11)
+export(GN16.gev11)
+export(ran.gev_all)
+
+# S3 methods for fitted objects (v2.0.0)
+S3method(print, glme)
+S3method(summary, glme)
+S3method(plot, glme)
+S3method(print, glme11)
+S3method(summary, glme11)
+S3method(plot, glme11)
+S3method(print, lme11)
+S3method(summary, lme11)
+S3method(plot, lme11)
+S3method(print, magev)
+S3method(summary, magev)
+S3method(plot, magev)
 
 # Shin et al. (2025b) compatibility functions
 export(nsgev)
@@ -23,10 +44,10 @@ export(magev.qqplot)
 export(magev.rlplot)
 
 # Imports from lmomco
-importFrom("lmomco", "lmoms", "pargev", "lmoms.cov", "vec2par", "lmomgev", "lmorph", "are.lmom.valid", "TLmoms", "lmomgum", "quagev", "pargum")
+importFrom("lmomco", "lmoms", "pargev", "lmoms.cov", "vec2par", "lmomgev", "lmorph", "are.lmom.valid", "TLmoms", "lmomgum", "quagev", "pargum", "rlmomco")
 
 # Imports from stats
-importFrom("stats", "optim", "rnorm", "runif", "integrate", "dnorm", "lm", "var", "cov", "median", "quantile", "cor", "spline", "qchisq", "na.omit")
+importFrom("stats", "optim", "rnorm", "runif", "integrate", "dnorm", "lm", "var", "sd", "cov", "median", "quantile", "cor", "spline", "qchisq", "na.omit", "ppoints")
 
 # Imports from methods
 importFrom("methods", "is")
